@@ -39,4 +39,5 @@ dependencies {
     sdk15Compile "co.trikita:anvil-sdk15:$anvil_version"
     sdk19Compile "co.trikita:anvil-sdk19:$anvil_version"
     sdk21Compile "co.trikita:anvil-sdk21:$anvil_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

@@ -12,9 +12,6 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
 }
 
 dependencies {
@@ -25,4 +22,5 @@ dependencies {
     compile project(":recyclerview")
     compile 'com.android.support:design:23.3.0'
     compile "co.trikita:anvil-design:$anvil_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

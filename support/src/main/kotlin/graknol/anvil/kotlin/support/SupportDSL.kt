@@ -7,28 +7,24 @@ import android.support.v4.view.PagerAdapter
 import android.support.v4.widget.NestedScrollView
 import android.support.v4.widget.SlidingPaneLayout
 import android.support.v4.widget.SwipeRefreshLayout
-import graknol.anvil.kotlin.DSLFrameLayout
-import graknol.anvil.kotlin.DSLProgressBar
-import graknol.anvil.kotlin.DSLTabHost
-import graknol.anvil.kotlin.DSLViewGroup
+import graknol.anvil.kotlin.*
 import trikita.anvil.Anvil
-import trikita.anvil.BaseDSL
 import trikita.anvil.support.v4.Supportv4DSL
 
+fun Anvil.Renderable.fragmentTabHost(r: SupportDSLFragmentTabHost.() -> Unit) = Supportv4DSL.fragmentTabHost({ SupportDSLFragmentTabHost().r() })
+fun Anvil.Renderable.contentLoadingProgressBar(r: SupportDSLContentLoadingProgressBar.() -> Unit) = Supportv4DSL.contentLoadingProgressBar({ SupportDSLContentLoadingProgressBar().r() })
+fun Anvil.Renderable.slidingPaneLayout(r: SupportDSLSlidingPaneLayout.() -> Unit) = Supportv4DSL.slidingPaneLayout({ SupportDSLSlidingPaneLayout().r() })
+fun Anvil.Renderable.viewPager(r: SupportDSLViewPager.() -> Unit) = Supportv4DSL.viewPager({ SupportDSLViewPager().r() })
+fun Anvil.Renderable.space(r: SupportDSLSpace.() -> Unit) = Supportv4DSL.space({ SupportDSLSpace().r() })
+fun Anvil.Renderable.nestedScrollView(r: SupportDSLNestedScrollView.() -> Unit) = Supportv4DSL.nestedScrollView({ SupportDSLNestedScrollView().r() })
+fun Anvil.Renderable.drawerLayout(r: SupportDSLDrawerLayout.() -> Unit) = Supportv4DSL.drawerLayout({ SupportDSLDrawerLayout().r() })
+fun Anvil.Renderable.swipeRefreshLayout(r: SupportDSLSwipeRefreshLayout.() -> Unit) = Supportv4DSL.swipeRefreshLayout({ SupportDSLSwipeRefreshLayout().r() })
 fun Anvil.Renderable.pagerTabStrip(r: SupportDSLPagerTabStrip.() -> Unit) = Supportv4DSL.pagerTabStrip({ SupportDSLPagerTabStrip().r() })
 fun Anvil.Renderable.pagerTitleStrip(r: SupportDSLPagerTitleStrip.() -> Unit) = Supportv4DSL.pagerTitleStrip({ SupportDSLPagerTitleStrip().r() })
-fun Anvil.Renderable.contentLoadingProgressBar(r: SupportDSLContentLoadingProgressBar.() -> Unit) = Supportv4DSL.contentLoadingProgressBar({ SupportDSLContentLoadingProgressBar().r() })
-fun Anvil.Renderable.nestedScrollView(r: SupportDSLNestedScrollView.() -> Unit) = Supportv4DSL.nestedScrollView({ SupportDSLNestedScrollView().r() })
-fun Anvil.Renderable.slidingPaneLayout(r: SupportDSLSlidingPaneLayout.() -> Unit) = Supportv4DSL.slidingPaneLayout({ SupportDSLSlidingPaneLayout().r() })
-fun Anvil.Renderable.swipeRefreshLayout(r: SupportDSLSwipeRefreshLayout.() -> Unit) = Supportv4DSL.swipeRefreshLayout({ SupportDSLSwipeRefreshLayout().r() })
-fun Anvil.Renderable.space(r: SupportDSLSpace.() -> Unit) = Supportv4DSL.space({ SupportDSLSpace().r() })
-fun Anvil.Renderable.drawerLayout(r: SupportDSLDrawerLayout.() -> Unit) = Supportv4DSL.drawerLayout({ SupportDSLDrawerLayout().r() })
-fun Anvil.Renderable.viewPager(r: SupportDSLViewPager.() -> Unit) = Supportv4DSL.viewPager({ SupportDSLViewPager().r() })
-fun Anvil.Renderable.fragmentTabHost(r: SupportDSLFragmentTabHost.() -> Unit) = Supportv4DSL.fragmentTabHost({ SupportDSLFragmentTabHost().r() })
 
 open class SupportDSLContentLoadingProgressBar : DSLProgressBar() {
 }
-open class SupportDSLSpace : BaseDSL() {
+open class SupportDSLSpace : DSLView() {
 }
 open class SupportDSLDrawerLayout : DSLViewGroup() {
 	open fun drawerElevation(arg: Float) = Supportv4DSL.drawerElevation(arg)

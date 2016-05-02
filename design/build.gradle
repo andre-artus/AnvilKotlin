@@ -16,10 +16,10 @@ android {
 
 dependencies {
     compile "co.trikita:anvil-sdk15:$anvil_version"
-    compile "com.github.graknol.AnvilKotlin:anvil:$anvilkotlin_version:sdk15Release@aar"
-    compile "com.github.graknol.AnvilKotlin:appcompat:$anvilkotlin_version"
-    compile "com.github.graknol.AnvilKotlin:support:$anvilkotlin_version"
-    compile "com.github.graknol.AnvilKotlin:recyclerview:$anvilkotlin_version"
+    compile project(path: ":anvil", configuration: "sdk15Release")
+    compile project(":appcompat")
+    compile project(":support")
+    compile project(":recyclerview")
     compile 'com.android.support:design:23.3.0'
     compile "co.trikita:anvil-design:$anvil_version"
 }

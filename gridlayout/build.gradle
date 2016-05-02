@@ -16,7 +16,7 @@ android {
 
 dependencies {
     compile "co.trikita:anvil-sdk15:$anvil_version"
-    compile "com.github.graknol.AnvilKotlin:anvil:$anvilkotlin_version:sdk15Release@aar"
+    compile project(path: ":anvil", configuration: "sdk15Release")
     compile 'com.android.support:gridlayout-v7:23.3.0'
     compile "co.trikita:anvil-gridlayout-v7:$anvil_version"
 }

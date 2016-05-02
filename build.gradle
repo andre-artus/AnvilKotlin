@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.anvilkotlin_version = "1.0"
     ext.anvil_version = "0.3.6"
     ext.kotlin_version = '1.0.1-2'
     repositories {

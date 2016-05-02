@@ -6,13 +6,13 @@ import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-import android.support.design.widget.NavigationView
-import android.support.design.widget.TabLayout
 import android.support.v4.view.ViewPager
-import android.view.View
-import graknol.anvil.kotlin.*
+import graknol.anvil.kotlin.BaseDSL
+import graknol.anvil.kotlin.DSLImageButton
+import graknol.anvil.kotlin.appcompat.AppCompatDSLEditText
+import graknol.anvil.kotlin.appcompat.AppCompatDSLLinearLayoutCompat
+import graknol.anvil.kotlin.recyclerview.RecyclerViewDSLRecyclerView
 import trikita.anvil.Anvil
-import trikita.anvil.design.DesignDSL
 
 fun Anvil.Renderable.appBarLayout(r: DesignDSLAppBarLayout.() -> Unit) = trikita.anvil.design.DesignDSL.appBarLayout({ DesignDSLAppBarLayout().r() })
 fun Anvil.Renderable.scrimInsetsFrameLayout(r: DesignDSLScrimInsetsFrameLayout.() -> Unit) = trikita.anvil.design.DesignDSL.scrimInsetsFrameLayout({ DesignDSLScrimInsetsFrameLayout().r() })

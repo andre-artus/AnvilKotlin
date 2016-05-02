@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group="com.github.graknol"
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+    }
+
+    defaultPublishConfig "sdk15Release"
+    publishNonDefault true
+    productFlavors {
+        sdk15 {
+            minSdkVersion 15
+        }
+        sdk19 {
+            minSdkVersion 19
+        }
+        sdk21 {
+            minSdkVersion 21
+        }
+    }
+}
+
+dependencies {
+    sdk15Compile "co.trikita:anvil-sdk15:$anvil_version"
+    sdk19Compile "co.trikita:anvil-sdk19:$anvil_version"
+    sdk21Compile "co.trikita:anvil-sdk21:$anvil_version"
+}

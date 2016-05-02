@@ -17,9 +17,9 @@ android {
     }
 }
 
-dependencies {
-    compile "co.trikita:anvil-sdk15:$anvil_version"
-    compile project(path: ":anvil", configuration: "sdk15Release")
-    compile 'com.android.support:support-v4:23.3.0'
-    compile "co.trikita:anvil-support-v4:$anvil_version"
-}
+//dependencies {
+//    compile "co.trikita:anvil-sdk15:$anvil_version"
+//    compile project(path: ":anvil", configuration: "sdk15Release")
+//    compile 'com.android.support:support-v4:23.3.0'
+//    compile "co.trikita:anvil-support-v4:$anvil_version"
+//}

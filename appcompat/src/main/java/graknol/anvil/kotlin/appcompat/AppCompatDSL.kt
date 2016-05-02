@@ -23,55 +23,55 @@ import trikita.anvil.appcompat.v7.AppCompatv7DSL
 
 fun Anvil.Renderable.actionBarOverlayLayout(r: AppCompatDSLActionBarOverlayLayout.() -> Unit) = AppCompatv7DSL.actionBarOverlayLayout({ AppCompatDSLActionBarOverlayLayout().r() })
 fun Anvil.Renderable.listViewCompat(r: AppCompatDSLListViewCompat.() -> Unit) = AppCompatv7DSL.listViewCompat({ AppCompatDSLListViewCompat().r() })
-fun Anvil.Renderable.appCompatRatingBar(r: AppCompatDSLAppCompatRatingBar.() -> Unit) = AppCompatv7DSL.appCompatRatingBar({ AppCompatDSLAppCompatRatingBar().r() })
+fun Anvil.Renderable.appCompatRatingBar(r: AppCompatDSLRatingBar.() -> Unit) = AppCompatv7DSL.appCompatRatingBar({ AppCompatDSLRatingBar().r() })
 fun Anvil.Renderable.scrollingTabContainerView(r: AppCompatDSLScrollingTabContainerView.() -> Unit) = AppCompatv7DSL.scrollingTabContainerView({ AppCompatDSLScrollingTabContainerView().r() })
 fun Anvil.Renderable.switchCompat(r: AppCompatDSLSwitchCompat.() -> Unit) = AppCompatv7DSL.switchCompat({ AppCompatDSLSwitchCompat().r() })
-fun Anvil.Renderable.appCompatSeekBar(r: AppCompatDSLAppCompatSeekBar.() -> Unit) = AppCompatv7DSL.appCompatSeekBar({ AppCompatDSLAppCompatSeekBar().r() })
-fun Anvil.Renderable.appCompatEditText(r: AppCompatDSLAppCompatEditText.() -> Unit) = AppCompatv7DSL.appCompatEditText({ AppCompatDSLAppCompatEditText().r() })
-fun Anvil.Renderable.appCompatCheckedTextView(r: AppCompatDSLAppCompatCheckedTextView.() -> Unit) = AppCompatv7DSL.appCompatCheckedTextView({ AppCompatDSLAppCompatCheckedTextView().r() })
+fun Anvil.Renderable.appCompatSeekBar(r: AppCompatDSLSeekBar.() -> Unit) = AppCompatv7DSL.appCompatSeekBar({ AppCompatDSLSeekBar().r() })
+fun Anvil.Renderable.appCompatEditText(r: AppCompatDSLEditText.() -> Unit) = AppCompatv7DSL.appCompatEditText({ AppCompatDSLEditText().r() })
+fun Anvil.Renderable.appCompatCheckedTextView(r: AppCompatDSLCheckedTextView.() -> Unit) = AppCompatv7DSL.appCompatCheckedTextView({ AppCompatDSLCheckedTextView().r() })
 fun Anvil.Renderable.searchView(r: AppCompatDSLSearchView.() -> Unit) = AppCompatv7DSL.searchView({ AppCompatDSLSearchView().r() })
-fun Anvil.Renderable.appCompatTextView(r: AppCompatDSLAppCompatTextView.() -> Unit) = AppCompatv7DSL.appCompatTextView({ AppCompatDSLAppCompatTextView().r() })
-fun Anvil.Renderable.appCompatAutoCompleteTextView(r: AppCompatDSLAppCompatAutoCompleteTextView.() -> Unit) = AppCompatv7DSL.appCompatAutoCompleteTextView({ AppCompatDSLAppCompatAutoCompleteTextView().r() })
-fun Anvil.Renderable.appCompatCheckBox(r: AppCompatDSLAppCompatCheckBox.() -> Unit) = AppCompatv7DSL.appCompatCheckBox({ AppCompatDSLAppCompatCheckBox().r() })
+fun Anvil.Renderable.appCompatTextView(r: AppCompatDSLTextView.() -> Unit) = AppCompatv7DSL.appCompatTextView({ AppCompatDSLTextView().r() })
+fun Anvil.Renderable.appCompatAutoCompleteTextView(r: AppCompatDSLAutoCompleteTextView.() -> Unit) = AppCompatv7DSL.appCompatAutoCompleteTextView({ AppCompatDSLAutoCompleteTextView().r() })
+fun Anvil.Renderable.appCompatCheckBox(r: AppCompatDSLCheckBox.() -> Unit) = AppCompatv7DSL.appCompatCheckBox({ AppCompatDSLCheckBox().r() })
 fun Anvil.Renderable.actionBarContainer(r: AppCompatDSLActionBarContainer.() -> Unit) = AppCompatv7DSL.actionBarContainer({ AppCompatDSLActionBarContainer().r() })
 fun Anvil.Renderable.listMenuItemView(r: AppCompatDSLListMenuItemView.() -> Unit) = AppCompatv7DSL.listMenuItemView({ AppCompatDSLListMenuItemView().r() })
-fun Anvil.Renderable.appCompatImageButton(r: AppCompatDSLAppCompatImageButton.() -> Unit) = AppCompatv7DSL.appCompatImageButton({ AppCompatDSLAppCompatImageButton().r() })
+fun Anvil.Renderable.appCompatImageButton(r: AppCompatDSLImageButton.() -> Unit) = AppCompatv7DSL.appCompatImageButton({ AppCompatDSLImageButton().r() })
 fun Anvil.Renderable.buttonBarLayout(r: AppCompatDSLButtonBarLayout.() -> Unit) = AppCompatv7DSL.buttonBarLayout({ AppCompatDSLButtonBarLayout().r() })
 fun Anvil.Renderable.activityChooserView(r: AppCompatDSLActivityChooserView.() -> Unit) = AppCompatv7DSL.activityChooserView({ AppCompatDSLActivityChooserView().r() })
 fun Anvil.Renderable.actionMenuView(r: AppCompatDSLActionMenuView.() -> Unit) = AppCompatv7DSL.actionMenuView({ AppCompatDSLActionMenuView().r() })
 fun Anvil.Renderable.linearLayoutCompat(r: AppCompatDSLLinearLayoutCompat.() -> Unit) = AppCompatv7DSL.linearLayoutCompat({ AppCompatDSLLinearLayoutCompat().r() })
-fun Anvil.Renderable.appCompatImageView(r: AppCompatDSLAppCompatImageView.() -> Unit) = AppCompatv7DSL.appCompatImageView({ AppCompatDSLAppCompatImageView().r() })
-fun Anvil.Renderable.appCompatButton(r: AppCompatDSLAppCompatButton.() -> Unit) = AppCompatv7DSL.appCompatButton({ AppCompatDSLAppCompatButton().r() })
-fun Anvil.Renderable.appCompatMultiAutoCompleteTextView(r: AppCompatDSLAppCompatMultiAutoCompleteTextView.() -> Unit) = AppCompatv7DSL.appCompatMultiAutoCompleteTextView({ AppCompatDSLAppCompatMultiAutoCompleteTextView().r() })
-fun Anvil.Renderable.appCompatSpinner(r: AppCompatDSLAppCompatSpinner.() -> Unit) = AppCompatv7DSL.appCompatSpinner({ AppCompatDSLAppCompatSpinner().r() })
+fun Anvil.Renderable.appCompatImageView(r: AppCompatDSLImageView.() -> Unit) = AppCompatv7DSL.appCompatImageView({ AppCompatDSLImageView().r() })
+fun Anvil.Renderable.appCompatButton(r: AppCompatDSLButton.() -> Unit) = AppCompatv7DSL.appCompatButton({ AppCompatDSLButton().r() })
+fun Anvil.Renderable.appCompatMultiAutoCompleteTextView(r: AppCompatDSLMultiAutoCompleteTextView.() -> Unit) = AppCompatv7DSL.appCompatMultiAutoCompleteTextView({ AppCompatDSLMultiAutoCompleteTextView().r() })
+fun Anvil.Renderable.appCompatSpinner(r: AppCompatDSLSpinner.() -> Unit) = AppCompatv7DSL.appCompatSpinner({ AppCompatDSLSpinner().r() })
 fun Anvil.Renderable.viewStubCompat(r: AppCompatDSLViewStubCompat.() -> Unit) = AppCompatv7DSL.viewStubCompat({ AppCompatDSLViewStubCompat().r() })
 fun Anvil.Renderable.actionBarContextView(r: AppCompatDSLActionBarContextView.() -> Unit) = AppCompatv7DSL.actionBarContextView({ AppCompatDSLActionBarContextView().r() })
 fun Anvil.Renderable.contentFrameLayout(r: AppCompatDSLContentFrameLayout.() -> Unit) = AppCompatv7DSL.contentFrameLayout({ AppCompatDSLContentFrameLayout().r() })
 fun Anvil.Renderable.toolbar(r: AppCompatDSLToolbar.() -> Unit) = AppCompatv7DSL.toolbar({ AppCompatDSLToolbar().r() })
 fun Anvil.Renderable.fitWindowsLinearLayout(r: AppCompatDSLFitWindowsLinearLayout.() -> Unit) = AppCompatv7DSL.fitWindowsLinearLayout({ AppCompatDSLFitWindowsLinearLayout().r() })
 fun Anvil.Renderable.expandedMenuView(r: AppCompatDSLExpandedMenuView.() -> Unit) = AppCompatv7DSL.expandedMenuView({ AppCompatDSLExpandedMenuView().r() })
-fun Anvil.Renderable.appCompatRadioButton(r: AppCompatDSLAppCompatRadioButton.() -> Unit) = AppCompatv7DSL.appCompatRadioButton({ AppCompatDSLAppCompatRadioButton().r() })
+fun Anvil.Renderable.appCompatRadioButton(r: AppCompatDSLRadioButton.() -> Unit) = AppCompatv7DSL.appCompatRadioButton({ AppCompatDSLRadioButton().r() })
 fun Anvil.Renderable.dialogTitle(r: AppCompatDSLDialogTitle.() -> Unit) = AppCompatv7DSL.dialogTitle({ AppCompatDSLDialogTitle().r() })
 fun Anvil.Renderable.fitWindowsFrameLayout(r: AppCompatDSLFitWindowsFrameLayout.() -> Unit) = AppCompatv7DSL.fitWindowsFrameLayout({ AppCompatDSLFitWindowsFrameLayout().r() })
 fun Anvil.Renderable.actionMenuItemView(r: AppCompatDSLActionMenuItemView.() -> Unit) = AppCompatv7DSL.actionMenuItemView({ AppCompatDSLActionMenuItemView().r() })
 
-open class AppCompatDSLAppCompatImageView : DSLImageView() {
+open class AppCompatDSLImageView : DSLImageView() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLAppCompatImageButton : DSLImageButton() {
+open class AppCompatDSLImageButton : DSLImageButton() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLAppCompatRatingBar : DSLRatingBar() {
+open class AppCompatDSLRatingBar : DSLRatingBar() {
 }
-open class AppCompatDSLAppCompatSeekBar : DSLSeekBar() {
+open class AppCompatDSLSeekBar : DSLSeekBar() {
 }
-open class AppCompatDSLAppCompatTextView : DSLTextView() {
+open class AppCompatDSLTextView : DSLTextView() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLActionMenuItemView : AppCompatDSLAppCompatTextView() {
+open class AppCompatDSLActionMenuItemView : AppCompatDSLTextView() {
 	open fun checkable(arg: Boolean) = AppCompatv7DSL.checkable(arg)
 	open fun checked(arg: Boolean) = AppCompatv7DSL.checked(arg)
 	open fun expandedFormat(arg: Boolean) = AppCompatv7DSL.expandedFormat(arg)
@@ -80,16 +80,16 @@ open class AppCompatDSLActionMenuItemView : AppCompatDSLAppCompatTextView() {
 	open fun popupCallback(arg: android.support.v7.view.menu.ActionMenuItemView.PopupCallback) = AppCompatv7DSL.popupCallback(arg)
 	open fun title(arg: CharSequence) = AppCompatv7DSL.title(arg)
 }
-open class AppCompatDSLAppCompatButton : DSLButton() {
+open class AppCompatDSLButton : DSLButton() {
 	open fun supportAllCaps(arg: Boolean) = AppCompatv7DSL.supportAllCaps(arg)
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLAppCompatCheckBox : DSLCheckBox() {
+open class AppCompatDSLCheckBox : DSLCheckBox() {
 	open fun supportButtonTintList(arg: ColorStateList) = AppCompatv7DSL.supportButtonTintList(arg)
 	open fun supportButtonTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportButtonTintMode(arg)
 }
-open class AppCompatDSLAppCompatRadioButton : DSLRadioButton() {
+open class AppCompatDSLRadioButton : DSLRadioButton() {
 	open fun supportButtonTintList(arg: ColorStateList) = AppCompatv7DSL.supportButtonTintList(arg)
 	open fun supportButtonTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportButtonTintMode(arg)
 }
@@ -107,19 +107,19 @@ open class AppCompatDSLSwitchCompat : DSLCompoundButton() {
 	open fun trackDrawable(arg: Drawable) = AppCompatv7DSL.trackDrawable(arg)
 	open fun trackResource(arg: Int) = AppCompatv7DSL.trackResource(arg)
 }
-open class AppCompatDSLAppCompatCheckedTextView : DSLCheckedTextView() {
+open class AppCompatDSLCheckedTextView : DSLCheckedTextView() {
 }
 open class AppCompatDSLDialogTitle : DSLTextView() {
 }
-open class AppCompatDSLAppCompatEditText : DSLEditText() {
+open class AppCompatDSLEditText : DSLEditText() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLAppCompatAutoCompleteTextView : DSLAutoCompleteTextView() {
+open class AppCompatDSLAutoCompleteTextView : DSLAutoCompleteTextView() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
-open class AppCompatDSLAppCompatMultiAutoCompleteTextView : DSLMultiAutoCompleteTextView() {
+open class AppCompatDSLMultiAutoCompleteTextView : DSLMultiAutoCompleteTextView() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }
@@ -157,7 +157,7 @@ open class AppCompatDSLExpandedMenuView : DSLListView() {
 }
 open class AppCompatDSLListViewCompat : DSLListView() {
 }
-open class AppCompatDSLAppCompatSpinner : DSLSpinner() {
+open class AppCompatDSLSpinner : DSLSpinner() {
 	open fun supportBackgroundTintList(arg: ColorStateList) = AppCompatv7DSL.supportBackgroundTintList(arg)
 	open fun supportBackgroundTintMode(arg: PorterDuff.Mode) = AppCompatv7DSL.supportBackgroundTintMode(arg)
 }

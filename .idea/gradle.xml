@@ -11,6 +11,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/anvil" />
             <option value="$PROJECT_DIR$/appcompat" />
+            <option value="$PROJECT_DIR$/cardview" />
+            <option value="$PROJECT_DIR$/design" />
+            <option value="$PROJECT_DIR$/gridlayout" />
+            <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/support" />
           </set>
         </option>
         <option name="myModules">
@@ -18,6 +23,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/anvil" />
             <option value="$PROJECT_DIR$/appcompat" />
+            <option value="$PROJECT_DIR$/cardview" />
+            <option value="$PROJECT_DIR$/design" />
+            <option value="$PROJECT_DIR$/gridlayout" />
+            <option value="$PROJECT_DIR$/recyclerview" />
+            <option value="$PROJECT_DIR$/support" />
           </set>
         </option>
       </GradleProjectSettings>

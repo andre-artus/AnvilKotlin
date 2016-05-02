@@ -17,6 +17,6 @@ android {
 dependencies {
     compile "co.trikita:anvil-sdk15:$anvil_version"
     compile "com.github.graknol.AnvilKotlin:anvil:$anvilkotlin_version:sdk15Release@aar"
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile "co.trikita:anvil-appcompat-v7:$anvil_version"
+    compile 'com.android.support:support-v4:23.3.0'
+    compile "co.trikita:anvil-support-v4:$anvil_version"
 }

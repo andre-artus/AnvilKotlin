@@ -12,6 +12,9 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 
 dependencies {

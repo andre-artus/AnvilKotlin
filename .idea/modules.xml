@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AnvilKotlin.iml" filepath="$PROJECT_DIR$/AnvilKotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/anvil-kotlin/anvil-kotlin.iml" filepath="$PROJECT_DIR$/anvil-kotlin/anvil-kotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/anvil-kotlin-appcompat/anvil-kotlin-appcompat.iml" filepath="$PROJECT_DIR$/anvil-kotlin-appcompat/anvil-kotlin-appcompat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anvil/anvil.iml" filepath="$PROJECT_DIR$/anvil/anvil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appcompat/appcompat.iml" filepath="$PROJECT_DIR$/appcompat/appcompat.iml" />
     </modules>
   </component>
 </project>

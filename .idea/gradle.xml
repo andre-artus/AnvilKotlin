@@ -9,15 +9,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/anvil-kotlin" />
-            <option value="$PROJECT_DIR$/anvil-kotlin-appcompat" />
+            <option value="$PROJECT_DIR$/anvil" />
+            <option value="$PROJECT_DIR$/appcompat" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/anvil-kotlin" />
-            <option value="$PROJECT_DIR$/anvil-kotlin-appcompat" />
+            <option value="$PROJECT_DIR$/anvil" />
+            <option value="$PROJECT_DIR$/appcompat" />
           </set>
         </option>
       </GradleProjectSettings>

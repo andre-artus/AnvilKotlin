@@ -1,1 +1,1 @@
-include ':anvil-kotlin', ':anvil-kotlin-appcompat'
+include ':anvil', ':appcompat'

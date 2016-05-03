@@ -28,9 +28,6 @@ android {
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-        //sdk15.java.srcDirs += 'src/sdk15/kotlin'
-        //sdk19.java.srcDirs += 'src/sdk19/kotlin'
-        //sdk21.java.srcDirs += 'src/sdk21/kotlin'
     }
 }
 

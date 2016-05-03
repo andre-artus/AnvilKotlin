@@ -18,12 +18,12 @@ android {
 }
 
 dependencies {
-    compile "co.trikita:anvil-sdk15:$anvil_version"
     compile project(path: ":anvil", configuration: "sdk15Release")
-    compile project(":appcompat")
     compile project(":support")
+    compile project(":appcompat")
     compile project(":recyclerview")
-    compile 'com.android.support:design:23.3.0'
-    compile "co.trikita:anvil-design:$anvil_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "co.trikita:anvil-sdk15:$anvil_version"
+    compile "co.trikita:anvil-design:$anvil_version"
+    compile 'com.android.support:design:23.3.0'
 }

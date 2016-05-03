@@ -28,14 +28,13 @@ android {
     }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-        sdk15.java.srcDirs += 'src/sdk15/kotlin'
-        sdk19.java.srcDirs += 'src/sdk19/kotlin'
-        sdk21.java.srcDirs += 'src/sdk21/kotlin'
+        //sdk15.java.srcDirs += 'src/sdk15/kotlin'
+        //sdk19.java.srcDirs += 'src/sdk19/kotlin'
+        //sdk21.java.srcDirs += 'src/sdk21/kotlin'
     }
 }
 
 dependencies {
-    //compile "co.trikita:anvil-sdk15:$anvil_version"
     sdk15Compile "co.trikita:anvil-sdk15:$anvil_version"
     sdk19Compile "co.trikita:anvil-sdk19:$anvil_version"
     sdk21Compile "co.trikita:anvil-sdk21:$anvil_version"

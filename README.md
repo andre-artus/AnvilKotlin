@@ -20,21 +20,21 @@ allprojects {
 The possible library strings are:
 ```gradle
 dependencies {
-  // Remember, you still need to add the equivalent Anvil and Android ones!
+  // Remember, you still need to set up the equivalent Anvil ones!
   
   // SDK libraries (choose one)
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.0:sdk15Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.0:sdk19Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.0:sdk21Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk15Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk19Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk21Release@aar'
   
   // Support libraries
   // Remember to also add their dependencies!
-  compile 'com.github.graknol.AnvilKotlin:cardview:0.1.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.1.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.1.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:support:0.1.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:design:0.1.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:appcompat:0.1.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:cardview:0.1.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.1.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.1.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:support:0.1.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:design:0.1.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:appcompat:0.1.1@aar'
 }
 ```
 

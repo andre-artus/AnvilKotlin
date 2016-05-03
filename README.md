@@ -22,13 +22,12 @@ The possible library strings are:
 dependencies {
   // Remember, you still need to set up the equivalent Anvil ones!
   
-  // SDK libraries (choose one)
+  // SDK libraries
   compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk15Release@aar'
   compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk19Release@aar'
   compile 'com.github.graknol.AnvilKotlin:anvil:0.1.1:sdk21Release@aar'
   
   // Support libraries
-  // Remember to also add their dependencies!
   compile 'com.github.graknol.AnvilKotlin:cardview:0.1.1@aar'
   compile 'com.github.graknol.AnvilKotlin:gridlayout:0.1.1@aar'
   compile 'com.github.graknol.AnvilKotlin:recyclerview:0.1.1@aar'

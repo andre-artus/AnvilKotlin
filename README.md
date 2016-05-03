@@ -40,7 +40,7 @@ dependencies {
 
 # How to use it
 
-Use the DSL classes for each library to create views and then use the functions on `this`, for instance:
+Use the DSL classes for each library (these are found in `graknol.anvil.kotlin`) to create views and then use the functions on `this`, for instance:
 
 ```kotlin
 DSL.linearLayout {

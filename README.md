@@ -36,6 +36,7 @@ dependencies {
   compile 'com.github.graknol.AnvilKotlin:design:0.1.0@aar'
   compile 'com.github.graknol.AnvilKotlin:appcompat:0.1.0@aar'
 }
+```
 
 # How to use it
 

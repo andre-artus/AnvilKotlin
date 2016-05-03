@@ -8,8 +8,8 @@ import graknol.anvil.kotlin.DSLViewGroup
 import trikita.anvil.Anvil
 import trikita.anvil.gridlayout.v7.GridLayoutv7DSL
 
-fun Anvil.Renderable.gridLayout(r: GridLayoutDSLGridLayout.() -> Unit) = GridLayoutv7DSL.gridLayout({ GridLayoutDSLGridLayout().r() })
-fun Anvil.Renderable.space(r: GridLayoutDSLSpace.() -> Unit) = GridLayoutv7DSL.space({ GridLayoutDSLSpace().r() })
+inline fun Anvil.Renderable.gridLayout(crossinline r: GridLayoutDSLGridLayout.() -> Unit) = GridLayoutv7DSL.gridLayout({ GridLayoutDSLGridLayout().r() })
+inline fun Anvil.Renderable.space(crossinline r: GridLayoutDSLSpace.() -> Unit) = GridLayoutv7DSL.space({ GridLayoutDSLSpace().r() })
 
 open class GridLayoutDSLSpace : DSLSpace() {
 }

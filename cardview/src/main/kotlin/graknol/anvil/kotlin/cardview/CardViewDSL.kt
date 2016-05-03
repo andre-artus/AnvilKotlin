@@ -6,7 +6,7 @@ import graknol.anvil.kotlin.DSLFrameLayout
 import trikita.anvil.Anvil
 import trikita.anvil.cardview.v7.CardViewv7DSL
 
-fun Anvil.Renderable.cardView(r: CardViewDSLCardView.() -> Unit) = CardViewv7DSL.cardView({ CardViewDSLCardView().r() })
+inline fun Anvil.Renderable.cardView(crossinline r: CardViewDSLCardView.() -> Unit) = CardViewv7DSL.cardView({ CardViewDSLCardView().r() })
 
 open class CardViewDSLCardView : DSLFrameLayout() {
 	open fun cardBackgroundColor(arg: Int) = CardViewv7DSL.cardBackgroundColor(arg)

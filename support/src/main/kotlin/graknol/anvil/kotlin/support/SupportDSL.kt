@@ -11,16 +11,16 @@ import graknol.anvil.kotlin.*
 import trikita.anvil.Anvil
 import trikita.anvil.support.v4.Supportv4DSL
 
-fun Anvil.Renderable.fragmentTabHost(r: SupportDSLFragmentTabHost.() -> Unit) = Supportv4DSL.fragmentTabHost({ SupportDSLFragmentTabHost().r() })
-fun Anvil.Renderable.contentLoadingProgressBar(r: SupportDSLContentLoadingProgressBar.() -> Unit) = Supportv4DSL.contentLoadingProgressBar({ SupportDSLContentLoadingProgressBar().r() })
-fun Anvil.Renderable.slidingPaneLayout(r: SupportDSLSlidingPaneLayout.() -> Unit) = Supportv4DSL.slidingPaneLayout({ SupportDSLSlidingPaneLayout().r() })
-fun Anvil.Renderable.viewPager(r: SupportDSLViewPager.() -> Unit) = Supportv4DSL.viewPager({ SupportDSLViewPager().r() })
-fun Anvil.Renderable.space(r: SupportDSLSpace.() -> Unit) = Supportv4DSL.space({ SupportDSLSpace().r() })
-fun Anvil.Renderable.nestedScrollView(r: SupportDSLNestedScrollView.() -> Unit) = Supportv4DSL.nestedScrollView({ SupportDSLNestedScrollView().r() })
-fun Anvil.Renderable.drawerLayout(r: SupportDSLDrawerLayout.() -> Unit) = Supportv4DSL.drawerLayout({ SupportDSLDrawerLayout().r() })
-fun Anvil.Renderable.swipeRefreshLayout(r: SupportDSLSwipeRefreshLayout.() -> Unit) = Supportv4DSL.swipeRefreshLayout({ SupportDSLSwipeRefreshLayout().r() })
-fun Anvil.Renderable.pagerTabStrip(r: SupportDSLPagerTabStrip.() -> Unit) = Supportv4DSL.pagerTabStrip({ SupportDSLPagerTabStrip().r() })
-fun Anvil.Renderable.pagerTitleStrip(r: SupportDSLPagerTitleStrip.() -> Unit) = Supportv4DSL.pagerTitleStrip({ SupportDSLPagerTitleStrip().r() })
+inline fun Anvil.Renderable.fragmentTabHost(crossinline r: SupportDSLFragmentTabHost.() -> Unit) = Supportv4DSL.fragmentTabHost({ SupportDSLFragmentTabHost().r() })
+inline fun Anvil.Renderable.contentLoadingProgressBar(crossinline r: SupportDSLContentLoadingProgressBar.() -> Unit) = Supportv4DSL.contentLoadingProgressBar({ SupportDSLContentLoadingProgressBar().r() })
+inline fun Anvil.Renderable.slidingPaneLayout(crossinline r: SupportDSLSlidingPaneLayout.() -> Unit) = Supportv4DSL.slidingPaneLayout({ SupportDSLSlidingPaneLayout().r() })
+inline fun Anvil.Renderable.viewPager(crossinline r: SupportDSLViewPager.() -> Unit) = Supportv4DSL.viewPager({ SupportDSLViewPager().r() })
+inline fun Anvil.Renderable.space(crossinline r: SupportDSLSpace.() -> Unit) = Supportv4DSL.space({ SupportDSLSpace().r() })
+inline fun Anvil.Renderable.nestedScrollView(crossinline r: SupportDSLNestedScrollView.() -> Unit) = Supportv4DSL.nestedScrollView({ SupportDSLNestedScrollView().r() })
+inline fun Anvil.Renderable.drawerLayout(crossinline r: SupportDSLDrawerLayout.() -> Unit) = Supportv4DSL.drawerLayout({ SupportDSLDrawerLayout().r() })
+inline fun Anvil.Renderable.swipeRefreshLayout(crossinline r: SupportDSLSwipeRefreshLayout.() -> Unit) = Supportv4DSL.swipeRefreshLayout({ SupportDSLSwipeRefreshLayout().r() })
+inline fun Anvil.Renderable.pagerTabStrip(crossinline r: SupportDSLPagerTabStrip.() -> Unit) = Supportv4DSL.pagerTabStrip({ SupportDSLPagerTabStrip().r() })
+inline fun Anvil.Renderable.pagerTitleStrip(crossinline r: SupportDSLPagerTitleStrip.() -> Unit) = Supportv4DSL.pagerTitleStrip({ SupportDSLPagerTitleStrip().r() })
 
 open class SupportDSLContentLoadingProgressBar : DSLProgressBar() {
 }

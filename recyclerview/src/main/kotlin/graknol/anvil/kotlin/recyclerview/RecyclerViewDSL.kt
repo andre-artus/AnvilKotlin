@@ -8,7 +8,7 @@ import graknol.anvil.kotlin.DSLViewGroup
 import trikita.anvil.Anvil
 import trikita.anvil.recyclerview.v7.RecyclerViewv7DSL
 
-fun Anvil.Renderable.recyclerView(r: RecyclerViewDSLRecyclerView.() -> Unit) = RecyclerViewv7DSL.recyclerView({ RecyclerViewDSLRecyclerView().r() })
+inline fun Anvil.Renderable.recyclerView(crossinline r: RecyclerViewDSLRecyclerView.() -> Unit) = RecyclerViewv7DSL.recyclerView({ RecyclerViewDSLRecyclerView().r() })
 
 open class RecyclerViewDSLRecyclerView : DSLViewGroup() {
 	open fun accessibilityDelegateCompat(arg: RecyclerViewAccessibilityDelegate) = RecyclerViewv7DSL.accessibilityDelegateCompat(arg)

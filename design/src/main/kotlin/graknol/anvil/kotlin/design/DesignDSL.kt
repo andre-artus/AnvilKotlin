@@ -15,19 +15,19 @@ import graknol.anvil.kotlin.recyclerview.RecyclerViewDSLRecyclerView
 import trikita.anvil.Anvil
 import trikita.anvil.design.DesignDSL
 
-fun Anvil.Renderable.collapsingToolbarLayout(r: DesignDSLCollapsingToolbarLayout.() -> Unit) = DesignDSL.collapsingToolbarLayout({ DesignDSLCollapsingToolbarLayout().r() })
-fun Anvil.Renderable.navigationView(r: DesignDSLNavigationView.() -> Unit) = DesignDSL.navigationView({ DesignDSLNavigationView().r() })
-fun Anvil.Renderable.textInputEditText(r: DesignDSLTextInputEditText.() -> Unit) = DesignDSL.textInputEditText({ DesignDSLTextInputEditText().r() })
-fun Anvil.Renderable.floatingActionButton(r: DesignDSLFloatingActionButton.() -> Unit) = DesignDSL.floatingActionButton({ DesignDSLFloatingActionButton().r() })
-fun Anvil.Renderable.tabItem(r: DesignDSLTabItem.() -> Unit) = DesignDSL.tabItem({ DesignDSLTabItem().r() })
-fun Anvil.Renderable.textInputLayout(r: DesignDSLTextInputLayout.() -> Unit) = DesignDSL.textInputLayout({ DesignDSLTextInputLayout().r() })
-fun Anvil.Renderable.tabLayout(r: DesignDSLTabLayout.() -> Unit) = DesignDSL.tabLayout({ DesignDSLTabLayout().r() })
-fun Anvil.Renderable.scrimInsetsFrameLayout(r: DesignDSLScrimInsetsFrameLayout.() -> Unit) = DesignDSL.scrimInsetsFrameLayout({ DesignDSLScrimInsetsFrameLayout().r() })
-fun Anvil.Renderable.navigationMenuItemView(r: DesignDSLNavigationMenuItemView.() -> Unit) = DesignDSL.navigationMenuItemView({ DesignDSLNavigationMenuItemView().r() })
-fun Anvil.Renderable.coordinatorLayout(r: DesignDSLCoordinatorLayout.() -> Unit) = DesignDSL.coordinatorLayout({ DesignDSLCoordinatorLayout().r() })
-fun Anvil.Renderable.navigationMenuView(r: DesignDSLNavigationMenuView.() -> Unit) = DesignDSL.navigationMenuView({ DesignDSLNavigationMenuView().r() })
-fun Anvil.Renderable.appBarLayout(r: DesignDSLAppBarLayout.() -> Unit) = DesignDSL.appBarLayout({ DesignDSLAppBarLayout().r() })
-fun Anvil.Renderable.foregroundLinearLayout(r: DesignDSLForegroundLinearLayout.() -> Unit) = DesignDSL.foregroundLinearLayout({ DesignDSLForegroundLinearLayout().r() })
+inline fun Anvil.Renderable.collapsingToolbarLayout( crossinline r: DesignDSLCollapsingToolbarLayout.() -> Unit) = DesignDSL.collapsingToolbarLayout({ DesignDSLCollapsingToolbarLayout().r() })
+inline fun Anvil.Renderable.navigationView( crossinline r: DesignDSLNavigationView.() -> Unit) = DesignDSL.navigationView({ DesignDSLNavigationView().r() })
+inline fun Anvil.Renderable.textInputEditText( crossinline r: DesignDSLTextInputEditText.() -> Unit) = DesignDSL.textInputEditText({ DesignDSLTextInputEditText().r() })
+inline fun Anvil.Renderable.floatingActionButton( crossinline r: DesignDSLFloatingActionButton.() -> Unit) = DesignDSL.floatingActionButton({ DesignDSLFloatingActionButton().r() })
+inline fun Anvil.Renderable.tabItem( crossinline r: DesignDSLTabItem.() -> Unit) = DesignDSL.tabItem({ DesignDSLTabItem().r() })
+inline fun Anvil.Renderable.textInputLayout(crossinline r: DesignDSLTextInputLayout.() -> Unit) = DesignDSL.textInputLayout({ DesignDSLTextInputLayout().r() })
+inline fun Anvil.Renderable.tabLayout( crossinline r: DesignDSLTabLayout.() -> Unit) = DesignDSL.tabLayout({ DesignDSLTabLayout().r() })
+inline fun Anvil.Renderable.scrimInsetsFrameLayout( crossinline r: DesignDSLScrimInsetsFrameLayout.() -> Unit) = DesignDSL.scrimInsetsFrameLayout({ DesignDSLScrimInsetsFrameLayout().r() })
+inline fun Anvil.Renderable.navigationMenuItemView( crossinline r: DesignDSLNavigationMenuItemView.() -> Unit) = DesignDSL.navigationMenuItemView({ DesignDSLNavigationMenuItemView().r() })
+inline fun Anvil.Renderable.coordinatorLayout( crossinline r: DesignDSLCoordinatorLayout.() -> Unit) = DesignDSL.coordinatorLayout({ DesignDSLCoordinatorLayout().r() })
+inline fun Anvil.Renderable.navigationMenuView( crossinline r: DesignDSLNavigationMenuView.() -> Unit) = DesignDSL.navigationMenuView({ DesignDSLNavigationMenuView().r() })
+inline fun Anvil.Renderable.appBarLayout( crossinline r: DesignDSLAppBarLayout.() -> Unit) = DesignDSL.appBarLayout({ DesignDSLAppBarLayout().r() })
+inline fun Anvil.Renderable.foregroundLinearLayout( crossinline r: DesignDSLForegroundLinearLayout.() -> Unit) = DesignDSL.foregroundLinearLayout({ DesignDSLForegroundLinearLayout().r() })
 
 open class DesignDSLVisibilityAwareImageButton : DSLImageButton() {
 }

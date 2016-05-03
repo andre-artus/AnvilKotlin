@@ -36,3 +36,18 @@ dependencies {
   compile 'com.github.graknol.AnvilKotlin:design:0.1.0@aar'
   compile 'com.github.graknol.AnvilKotlin:appcompat:0.1.0@aar'
 }
+
+# How to use it
+
+Use the DSL classes for each library to create views and then use the functions on `this`, for instance:
+
+```kotlin
+DSL.linearLayout {
+  backgroundColor(someIntValue)
+  AppCompatDSL.someOtherView {
+    // These are equivalent
+    someOtherAttr(foo)
+    this.someOtherAttr(foo)
+  }
+}
+```

@@ -98,7 +98,7 @@ class ExampleView(c: Context) : RenderableView(c) {
         foo() // VALID
         bar() // VALID
 
-        onClick(OnClickListener {
+        onClick(View.OnClickListener {
           foo() // VALID
           bar() // VALID
         })
@@ -109,6 +109,8 @@ class ExampleView(c: Context) : RenderableView(c) {
   }
 }
 ```
+
+**NOTE:** _You may or may not need to write View.OnClickListener instead of just OnClickListener. I don't know if it's a bug with Kotlin or with Android Studio, but nonetheless nice to know about._
 
 With this simple system you can create intuitive ways of styling and theming your UI.
 

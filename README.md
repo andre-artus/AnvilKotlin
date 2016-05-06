@@ -116,4 +116,4 @@ With this simple system you can create intuitive ways of styling and theming you
 
 ## License
 
-Code is distributed under MIT license, feel free to use it in your proprietary projects as well.
+Code is distributed under MIT license, feel free to use it in your proprietary projects as well. 

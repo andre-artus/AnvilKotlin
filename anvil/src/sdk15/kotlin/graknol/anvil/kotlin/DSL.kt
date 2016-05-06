@@ -188,7 +188,6 @@ inline fun Anvil.Renderable.imageView(crossinline r: DSLImageView<ViewGroup.Layo
 inline fun <T : ViewGroup.LayoutParams> DSLViewGroup<T>.imageView(crossinline r: DSLImageView<T>.() -> Unit) = DSL.imageView({ DSLImageView<T>().r() })
 
 open class DSLView <T : ViewGroup.LayoutParams>() : BaseDSL() {
-	private fun __foo_justexample__() {}
 	constructor(r: DSLView<T>.() -> Unit) : this() { r() }
 	fun layoutParams(arg: T.() -> Unit) {
 		@Suppress("UNCHECKED_CAST")

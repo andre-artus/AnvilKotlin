@@ -96,6 +96,7 @@ class ExampleView(c: Context) : RenderableView(c) {
 ```
 
 The reason for the "seemingly redundant" typing of `OnClickListener` above, is simply that Kotlin does not automatically convert Kotlin parameters to SAM functions, and there are too many functions in the different library for me to patch every single one of them. Also, some listeners have multiple functions, so you'll end up writing those this way anyways. ;)
+
 **NOTE:** _You may or may not need to write View.OnClickListener instead of just OnClickListener. I don't know if it's a bug with Kotlin or with Android Studio, but nonetheless nice to know about._
 
 ### Splitting the code is ugly, I know

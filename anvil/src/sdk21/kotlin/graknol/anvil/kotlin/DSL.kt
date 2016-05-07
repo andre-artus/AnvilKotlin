@@ -32,8 +32,8 @@ import android.widget.*
 import trikita.anvil.Anvil
 import trikita.anvil.DSL
 import java.util.*
-/*
 
+inline fun Anvil.Renderable.root(crossinline r: DSLViewGroup<ViewGroup.LayoutParams>.() -> Unit) = DSLViewGroup<ViewGroup.LayoutParams>().r()
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.gLSurfaceView(crossinline r: DSLGLSurfaceView<U>.() -> Unit) = DSL.gLSurfaceView({ DSLGLSurfaceView<U>().r() })
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.viewGroup(crossinline r: DSLViewGroup<U>.() -> Unit) = DSL.viewGroup({ DSLViewGroup<U>().r() })
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.checkBox(crossinline r: DSLCheckBox<U>.() -> Unit) = DSL.checkBox({ DSLCheckBox<U>().r() })
@@ -113,7 +113,6 @@ inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroup
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.absoluteLayout(crossinline r: DSLAbsoluteLayout<U>.() -> Unit) = DSL.absoluteLayout({ DSLAbsoluteLayout<U>().r() })
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.gridLayout(crossinline r: DSLGridLayout<U>.() -> Unit) = DSL.gridLayout({ DSLGridLayout<U>().r() })
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.appWidgetHostView(crossinline r: DSLAppWidgetHostView<U>.() -> Unit) = DSL.appWidgetHostView({ DSLAppWidgetHostView<U>().r() })
-*/
 
 open class DSLView<T : ViewGroup.LayoutParams>() : BaseDSL() {
 	open fun accessibilityDelegate(arg: android.view.View.AccessibilityDelegate) = DSL.accessibilityDelegate(arg)

@@ -40,32 +40,6 @@ import trikita.anvil.Anvil
 import trikita.anvil.DSL
 import trikita.anvil.RenderableView
 
-class ExampleView(c: Context) : RenderableView(c) {
-	override fun view() {
-		root {
-			linearLayout {
-				button {
-				}
-				gridLayout {
-					foo()
-				}
-			}
-		}
-	}
-}
-val foo: DSLGridLayout<LinearLayout.LayoutParams>.() -> Unit = {
-	layoutParams {
-		weight = 1f
-		gravity = START
-	}
-	button {
-		layoutParams {
-			columnSpec = GridLayout.spec(2)
-			rowSpec = GridLayout.spec(1)
-		}
-	}
-}
-
 inline fun Anvil.Renderable.root(crossinline r: DSLViewGroup<ViewGroup.LayoutParams>.() -> Unit) = DSLViewGroup<ViewGroup.LayoutParams>().r()
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.numberPicker(crossinline r: DSLNumberPicker<U>.() -> Unit) = DSL.numberPicker({ DSLNumberPicker<U>().r() })
 inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.ratingBar(crossinline r: DSLRatingBar<U>.() -> Unit) = DSL.ratingBar({ DSLRatingBar<U>().r() })

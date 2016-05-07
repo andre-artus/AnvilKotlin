@@ -101,7 +101,7 @@ The reason for the "seemingly redundant" typing of `OnClickListener` above, is s
 
 ### Splitting the code is ugly, I know
 
-We're working hard on solving this problem and will probably restructure big parts of Anvil and AnvilKotlin, but in the meantime, this is how it works. Yes, it's ugly! But, it was the only way it could be done with the current architecture :(
+We're working hard on solving this problem and will probably have to restructure big parts of Anvil and AnvilKotlin, but in the meantime, this is how it works. Yes, it's ugly! But, it was the only way it could be done with the current architecture :(
 
 ## License
 

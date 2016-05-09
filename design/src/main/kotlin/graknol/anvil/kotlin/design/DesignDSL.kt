@@ -10,48 +10,65 @@ import android.support.design.widget.AppBarLayout
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.CoordinatorLayout
 import android.support.v4.view.ViewPager
-import android.view.ViewGroup
+import android.support.v7.widget.LinearLayoutCompat
+import android.support.v7.widget.RecyclerView
+import android.widget.FrameLayout
+import android.widget.LinearLayout
 import graknol.anvil.kotlin.*
-import graknol.anvil.kotlin.appcompat.AppCompatDSLAppCompatEditText
-import graknol.anvil.kotlin.appcompat.AppCompatDSLLinearLayoutCompat
-import graknol.anvil.kotlin.recyclerview.RecyclerViewDSLRecyclerView
+import graknol.anvil.kotlin.appcompat.AppCompatDSLAppCompatEditTextBase
+import graknol.anvil.kotlin.appcompat.AppCompatDSLLinearLayoutCompatBase
+import graknol.anvil.kotlin.recyclerview.RecyclerViewDSLRecyclerViewBase
+import trikita.anvil.Anvil
 import trikita.anvil.design.DesignDSL
 
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.collapsingToolbarLayout(crossinline r: DesignDSLCollapsingToolbarLayout<U>.() -> Unit) = DesignDSL.collapsingToolbarLayout({ DesignDSLCollapsingToolbarLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.navigationView(crossinline r: DesignDSLNavigationView<U>.() -> Unit) = DesignDSL.navigationView({ DesignDSLNavigationView<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.textInputEditText(crossinline r: DesignDSLTextInputEditText<U>.() -> Unit) = DesignDSL.textInputEditText({ DesignDSLTextInputEditText<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.floatingActionButton(crossinline r: DesignDSLFloatingActionButton<U>.() -> Unit) = DesignDSL.floatingActionButton({ DesignDSLFloatingActionButton<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.tabItem(crossinline r: DesignDSLTabItem<U>.() -> Unit) = DesignDSL.tabItem({ DesignDSLTabItem<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.textInputLayout(crossinline r: DesignDSLTextInputLayout<U>.() -> Unit) = DesignDSL.textInputLayout({ DesignDSLTextInputLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.tabLayout(crossinline r: DesignDSLTabLayout<U>.() -> Unit) = DesignDSL.tabLayout({ DesignDSLTabLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.scrimInsetsFrameLayout(crossinline r: DesignDSLScrimInsetsFrameLayout<U>.() -> Unit) = DesignDSL.scrimInsetsFrameLayout({ DesignDSLScrimInsetsFrameLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.navigationMenuItemView(crossinline r: DesignDSLNavigationMenuItemView<U>.() -> Unit) = DesignDSL.navigationMenuItemView({ DesignDSLNavigationMenuItemView<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.coordinatorLayout(crossinline r: DesignDSLCoordinatorLayout<U>.() -> Unit) = DesignDSL.coordinatorLayout({ DesignDSLCoordinatorLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.navigationMenuView(crossinline r: DesignDSLNavigationMenuView<U>.() -> Unit) = DesignDSL.navigationMenuView({ DesignDSLNavigationMenuView<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.appBarLayout(crossinline r: DesignDSLAppBarLayout<U>.() -> Unit) = DesignDSL.appBarLayout({ DesignDSLAppBarLayout<U>().r() })
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.foregroundLinearLayout(crossinline r: DesignDSLForegroundLinearLayout<U>.() -> Unit) = DesignDSL.foregroundLinearLayout({ DesignDSLForegroundLinearLayout<U>().r() })
+inline fun Anvil.Renderable.collapsingToolbarLayout( crossinline r: DesignDSLCollapsingToolbarLayout.() -> Unit) = DesignDSL.collapsingToolbarLayout({ DesignDSLCollapsingToolbarLayout.r() })
+inline fun Anvil.Renderable.navigationView( crossinline r: DesignDSLNavigationView.() -> Unit) = DesignDSL.navigationView({ DesignDSLNavigationView.r() })
+inline fun Anvil.Renderable.textInputEditText( crossinline r: DesignDSLTextInputEditText.() -> Unit) = DesignDSL.textInputEditText({ DesignDSLTextInputEditText.r() })
+inline fun Anvil.Renderable.floatingActionButton( crossinline r: DesignDSLFloatingActionButton.() -> Unit) = DesignDSL.floatingActionButton({ DesignDSLFloatingActionButton.r() })
+inline fun Anvil.Renderable.tabItem( crossinline r: DesignDSLTabItem.() -> Unit) = DesignDSL.tabItem({ DesignDSLTabItem.r() })
+inline fun Anvil.Renderable.textInputLayout(crossinline r: DesignDSLTextInputLayout.() -> Unit) = DesignDSL.textInputLayout({ DesignDSLTextInputLayout.r() })
+inline fun Anvil.Renderable.tabLayout( crossinline r: DesignDSLTabLayout.() -> Unit) = DesignDSL.tabLayout({ DesignDSLTabLayout.r() })
+inline fun Anvil.Renderable.scrimInsetsFrameLayout( crossinline r: DesignDSLScrimInsetsFrameLayout.() -> Unit) = DesignDSL.scrimInsetsFrameLayout({ DesignDSLScrimInsetsFrameLayout.r() })
+inline fun Anvil.Renderable.navigationMenuItemView( crossinline r: DesignDSLNavigationMenuItemView.() -> Unit) = DesignDSL.navigationMenuItemView({ DesignDSLNavigationMenuItemView.r() })
+inline fun Anvil.Renderable.coordinatorLayout( crossinline r: DesignDSLCoordinatorLayout.() -> Unit) = DesignDSL.coordinatorLayout({ DesignDSLCoordinatorLayout.r() })
+inline fun Anvil.Renderable.navigationMenuView( crossinline r: DesignDSLNavigationMenuView.() -> Unit) = DesignDSL.navigationMenuView({ DesignDSLNavigationMenuView.r() })
+inline fun Anvil.Renderable.appBarLayout( crossinline r: DesignDSLAppBarLayout.() -> Unit) = DesignDSL.appBarLayout({ DesignDSLAppBarLayout.r() })
+inline fun Anvil.Renderable.foregroundLinearLayout( crossinline r: DesignDSLForegroundLinearLayout.() -> Unit) = DesignDSL.foregroundLinearLayout({ DesignDSLForegroundLinearLayout.r() })
 
-open class DesignDSLVisibilityAwareImageButton<T : ViewGroup.LayoutParams>() : DSLImageButton<T>() {
+object DesignDSLVisibilityAwareImageButton : DesignDSLVisibilityAwareImageButtonBase()
+object DesignDSLFloatingActionButton : DesignDSLFloatingActionButtonBase()
+object DesignDSLTabItem : DesignDSLTabItemBase()
+object DesignDSLTextInputEditText : DesignDSLTextInputEditTextBase()
+object DesignDSLCoordinatorLayout : DesignDSLCoordinatorLayoutBase<CoordinatorLayout.LayoutParams>()
+object DesignDSLCollapsingToolbarLayout : DesignDSLCollapsingToolbarLayoutBase<CollapsingToolbarLayout.LayoutParams>()
+object DesignDSLTabLayout : DesignDSLTabLayoutBase<FrameLayout.LayoutParams>()
+object DesignDSLScrimInsetsFrameLayout : DesignDSLScrimInsetsFrameLayoutBase<FrameLayout.LayoutParams>()
+object DesignDSLNavigationView : DesignDSLNavigationViewBase<FrameLayout.LayoutParams>()
+object DesignDSLAppBarLayout : DesignDSLAppBarLayoutBase<AppBarLayout.LayoutParams>()
+object DesignDSLTextInputLayout : DesignDSLTextInputLayoutBase<LinearLayout.LayoutParams>()
+object DesignDSLForegroundLinearLayout : DesignDSLForegroundLinearLayoutBase<LinearLayoutCompat.LayoutParams>()
+object DesignDSLNavigationMenuItemView : DesignDSLNavigationMenuItemViewBase<LinearLayoutCompat.LayoutParams>()
+object DesignDSLNavigationMenuView : DesignDSLNavigationMenuViewBase<RecyclerView.LayoutParams>()
+
+abstract class DesignDSLVisibilityAwareImageButtonBase : DSLImageButtonBase() {
 }
-open class DesignDSLFloatingActionButton<T : ViewGroup.LayoutParams>() : DesignDSLVisibilityAwareImageButton<T>() {
+abstract class DesignDSLFloatingActionButtonBase : DesignDSLVisibilityAwareImageButtonBase() {
 	open fun backgroundTintList(arg: ColorStateList) = DesignDSL.backgroundTintList(arg)
 	open fun backgroundTintMode(arg: PorterDuff.Mode) = DesignDSL.backgroundTintMode(arg)
 	open fun compatElevation(arg: Float) = DesignDSL.compatElevation(arg)
 	open fun rippleColor(arg: Int) = DesignDSL.rippleColor(arg)
 	open fun useCompatPadding(arg: Boolean) = DesignDSL.useCompatPadding(arg)
 }
-open class DesignDSLTabItem<T : ViewGroup.LayoutParams>() : DSLView<T>() {
+abstract class DesignDSLTabItemBase : DSLViewBase() {
 }
-open class DesignDSLTextInputEditText<T : ViewGroup.LayoutParams>() : AppCompatDSLAppCompatEditText<T>() {
+abstract class DesignDSLTextInputEditTextBase : AppCompatDSLAppCompatEditTextBase() {
 }
-open class DesignDSLCoordinatorLayoutBase<T : ViewGroup.LayoutParams, U : CoordinatorLayout.LayoutParams>() : DSLViewGroupBase<T, U>() {
+abstract class DesignDSLCoordinatorLayoutBase<T : CoordinatorLayout.LayoutParams> : DSLViewGroupBase<T>() {
 	open fun statusBarBackground(arg: Drawable) = DesignDSL.statusBarBackground(arg)
 	open fun statusBarBackgroundColor(arg: Int) = DesignDSL.statusBarBackgroundColor(arg)
 	open fun statusBarBackgroundResource(arg: Int) = DesignDSL.statusBarBackgroundResource(arg)
 }
-open class DesignDSLCoordinatorLayout<T : ViewGroup.LayoutParams> : DesignDSLCoordinatorLayoutBase<T, CoordinatorLayout.LayoutParams>() {
-}
-open class DesignDSLCollapsingToolbarLayoutBase<T : ViewGroup.LayoutParams, U : CollapsingToolbarLayout.LayoutParams>() : DSLFrameLayoutBase<T, U>() {
+abstract class DesignDSLCollapsingToolbarLayoutBase<T : CollapsingToolbarLayout.LayoutParams> : DSLFrameLayoutBase<T>() {
 	open fun collapsedTitleGravity(arg: Int) = DesignDSL.collapsedTitleGravity(arg)
 	open fun collapsedTitleTextAppearance(arg: Int) = DesignDSL.collapsedTitleTextAppearance(arg)
 	open fun collapsedTitleTextColor(arg: Int) = DesignDSL.collapsedTitleTextColor(arg)
@@ -74,9 +91,7 @@ open class DesignDSLCollapsingToolbarLayoutBase<T : ViewGroup.LayoutParams, U : 
 	open fun title(arg: CharSequence) = DesignDSL.title(arg)
 	open fun titleEnabled(arg: Boolean) = DesignDSL.titleEnabled(arg)
 }
-open class DesignDSLCollapsingToolbarLayout<T : ViewGroup.LayoutParams>() : DSLFrameLayoutBase<T, CollapsingToolbarLayout.LayoutParams>() {
-}
-open class DesignDSLTabLayout<T : ViewGroup.LayoutParams>() : DSLHorizontalScrollView<T>() {
+abstract class DesignDSLTabLayoutBase<T : FrameLayout.LayoutParams> : DSLHorizontalScrollViewBase<T>() {
 	open fun onTabSelected(arg: android.support.design.widget.TabLayout.OnTabSelectedListener) = DesignDSL.onTabSelected(arg)
 	open fun selectedTabIndicatorColor(arg: Int) = DesignDSL.selectedTabIndicatorColor(arg)
 	open fun selectedTabIndicatorHeight(arg: Int) = DesignDSL.selectedTabIndicatorHeight(arg)
@@ -85,9 +100,9 @@ open class DesignDSLTabLayout<T : ViewGroup.LayoutParams>() : DSLHorizontalScrol
 	open fun tabTextColors(arg: ColorStateList) = DesignDSL.tabTextColors(arg)
 	open fun upWithViewPager(arg: ViewPager) = DesignDSL.upWithViewPager(arg)
 }
-open class DesignDSLScrimInsetsFrameLayout<T : ViewGroup.LayoutParams>() : DSLFrameLayout<T>() {
+abstract class DesignDSLScrimInsetsFrameLayoutBase<T : FrameLayout.LayoutParams> : DSLFrameLayoutBase<T>() {
 }
-open class DesignDSLNavigationView<T : ViewGroup.LayoutParams>() : DesignDSLScrimInsetsFrameLayout<T>() {
+abstract class DesignDSLNavigationViewBase<T : FrameLayout.LayoutParams> : DesignDSLScrimInsetsFrameLayoutBase<T>() {
 	open fun checkedItem(arg: Int) = DesignDSL.checkedItem(arg)
 	open fun itemBackground(arg: Drawable) = DesignDSL.itemBackground(arg)
 	open fun itemBackgroundResource(arg: Int) = DesignDSL.itemBackgroundResource(arg)
@@ -96,13 +111,11 @@ open class DesignDSLNavigationView<T : ViewGroup.LayoutParams>() : DesignDSLScri
 	open fun itemTextColor(arg: ColorStateList) = DesignDSL.itemTextColor(arg)
 	open fun navigationItemSelectedListener(arg: android.support.design.widget.NavigationView.OnNavigationItemSelectedListener) = DesignDSL.navigationItemSelectedListener(arg)
 }
-open class DesignDSLAppBarLayoutBase<T : ViewGroup.LayoutParams, U : AppBarLayout.LayoutParams>() : DSLLinearLayoutBase<T, U>() {
+abstract class DesignDSLAppBarLayoutBase<T : AppBarLayout.LayoutParams> : DSLLinearLayoutBase<T>() {
 	open fun expanded(arg: Boolean) = DesignDSL.expanded(arg)
 	open fun targetElevation(arg: Float) = DesignDSL.targetElevation(arg)
 }
-open class DesignDSLAppBarLayout<T : ViewGroup.LayoutParams>() : DesignDSLAppBarLayoutBase<T, AppBarLayout.LayoutParams>() {
-}
-open class DesignDSLTextInputLayout<T : ViewGroup.LayoutParams>() : DSLLinearLayout<T>() {
+abstract class DesignDSLTextInputLayoutBase<T : LinearLayout.LayoutParams> : DSLLinearLayoutBase<T>() {
 	open fun counterEnabled(arg: Boolean) = DesignDSL.counterEnabled(arg)
 	open fun counterMaxLength(arg: Int) = DesignDSL.counterMaxLength(arg)
 	open fun error(arg: CharSequence) = DesignDSL.error(arg)
@@ -113,16 +126,16 @@ open class DesignDSLTextInputLayout<T : ViewGroup.LayoutParams>() : DSLLinearLay
 	open fun hintTextAppearance(arg: Int) = DesignDSL.hintTextAppearance(arg)
 	open fun typeface(arg: Typeface) = DesignDSL.typeface(arg)
 }
-open class DesignDSLForegroundLinearLayout<T : ViewGroup.LayoutParams>() : AppCompatDSLLinearLayoutCompat<T>() {
+abstract class DesignDSLForegroundLinearLayoutBase<T : LinearLayoutCompat.LayoutParams> : AppCompatDSLLinearLayoutCompatBase<T>() {
 	open fun foreground(arg: Drawable) = DesignDSL.foreground(arg)
 	open fun foregroundGravity(arg: Int) = DesignDSL.foregroundGravity(arg)
 }
-open class DesignDSLNavigationMenuItemView<T : ViewGroup.LayoutParams>() : DesignDSLForegroundLinearLayout<T>() {
+abstract class DesignDSLNavigationMenuItemViewBase<T : LinearLayoutCompat.LayoutParams> : DesignDSLForegroundLinearLayoutBase<T>() {
 	open fun checkable(arg: Boolean) = DesignDSL.checkable(arg)
 	open fun checked(arg: Boolean) = DesignDSL.checked(arg)
 	open fun icon(arg: Drawable) = DesignDSL.icon(arg)
 	open fun textColor(arg: ColorStateList) = DesignDSL.textColor(arg)
 	open fun title(arg: CharSequence) = DesignDSL.title(arg)
 }
-open class DesignDSLNavigationMenuView<T : ViewGroup.LayoutParams>() : RecyclerViewDSLRecyclerView<T>() {
+abstract class DesignDSLNavigationMenuViewBase<T : RecyclerView.LayoutParams> : RecyclerViewDSLRecyclerViewBase<T>() {
 }

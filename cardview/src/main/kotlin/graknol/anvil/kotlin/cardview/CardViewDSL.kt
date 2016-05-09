@@ -2,15 +2,16 @@
 
 package graknol.anvil.kotlin.cardview
 
-import android.view.ViewGroup
-import graknol.anvil.kotlin.DSLFrameLayout
-import graknol.anvil.kotlin.DSLViewGroupBase
+import android.widget.FrameLayout
+import graknol.anvil.kotlin.DSLFrameLayoutBase
+import trikita.anvil.Anvil
 import trikita.anvil.cardview.v7.CardViewv7DSL
 
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.cardView(crossinline r: CardViewDSLCardView<U>.() -> Unit) = CardViewv7DSL.cardView({ CardViewDSLCardView<U>().r() })
+inline fun Anvil.Renderable.cardView(crossinline r: CardViewDSLCardView.() -> Unit) = CardViewv7DSL.cardView({ CardViewDSLCardView.r() })
 
-open class CardViewDSLCardView<T : ViewGroup.LayoutParams>() : DSLFrameLayout<T>() {
-	constructor(r: CardViewDSLCardView<T>.() -> Unit) : this() { r() }
+object CardViewDSLCardView : CardViewDSLCardViewBase<FrameLayout.LayoutParams>()
+
+abstract class CardViewDSLCardViewBase<T : FrameLayout.LayoutParams> : DSLFrameLayoutBase<T>() {
 	open fun cardBackgroundColor(arg: Int) = CardViewv7DSL.cardBackgroundColor(arg)
 	open fun cardElevation(arg: Float) = CardViewv7DSL.cardElevation(arg)
 	open fun maxCardElevation(arg: Float) = CardViewv7DSL.maxCardElevation(arg)

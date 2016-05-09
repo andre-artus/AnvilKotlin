@@ -4,13 +4,15 @@ package graknol.anvil.kotlin.recyclerview
 
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerViewAccessibilityDelegate
-import android.view.ViewGroup
 import graknol.anvil.kotlin.DSLViewGroupBase
+import trikita.anvil.Anvil
 import trikita.anvil.recyclerview.v7.RecyclerViewv7DSL
 
-inline fun <T : ViewGroup.LayoutParams, U : ViewGroup.LayoutParams> DSLViewGroupBase<T, U>.recyclerView(crossinline r: RecyclerViewDSLRecyclerView<U>.() -> Unit) = RecyclerViewv7DSL.recyclerView({ RecyclerViewDSLRecyclerView<U>().r() })
+inline fun Anvil.Renderable.recyclerView(crossinline r: RecyclerViewDSLRecyclerView.() -> Unit) = RecyclerViewv7DSL.recyclerView({ RecyclerViewDSLRecyclerView.r() })
 
-open class RecyclerViewDSLRecyclerViewBase<T : ViewGroup.LayoutParams, U : RecyclerView.LayoutParams> : DSLViewGroupBase<T, U>() {
+object RecyclerViewDSLRecyclerView : RecyclerViewDSLRecyclerViewBase<RecyclerView.LayoutParams>()
+
+abstract class RecyclerViewDSLRecyclerViewBase<T : RecyclerView.LayoutParams> : DSLViewGroupBase<T>() {
 	open fun accessibilityDelegateCompat(arg: RecyclerViewAccessibilityDelegate) = RecyclerViewv7DSL.accessibilityDelegateCompat(arg)
 	open fun adapter(arg: RecyclerView.Adapter<*>) = RecyclerViewv7DSL.adapter(arg)
 	open fun childDrawingOrderCallback(arg: RecyclerView.ChildDrawingOrderCallback) = RecyclerViewv7DSL.childDrawingOrderCallback(arg)
@@ -24,6 +26,4 @@ open class RecyclerViewDSLRecyclerViewBase<T : ViewGroup.LayoutParams, U : Recyc
 	open fun recyclerListener(arg: RecyclerView.RecyclerListener) = RecyclerViewv7DSL.recyclerListener(arg)
 	open fun scrollingTouchSlop(arg: Int) = RecyclerViewv7DSL.scrollingTouchSlop(arg)
 	open fun viewCacheExtension(arg: RecyclerView.ViewCacheExtension) = RecyclerViewv7DSL.viewCacheExtension(arg)
-}
-open class RecyclerViewDSLRecyclerView<T : ViewGroup.LayoutParams> : RecyclerViewDSLRecyclerViewBase<T, RecyclerView.LayoutParams>() {
 }

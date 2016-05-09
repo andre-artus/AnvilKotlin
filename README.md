@@ -23,17 +23,17 @@ dependencies {
   // Remember, you still need to set up the equivalent Anvil ones!
   
   // SDK libraries
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.2.0:sdk15Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.2.0:sdk19Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.2.0:sdk21Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk15Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk19Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk21Release@aar'
   
   // Support libraries
-  compile 'com.github.graknol.AnvilKotlin:cardview:0.2.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.2.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.@aar'
-  compile 'com.github.graknol.AnvilKotlin:support:0.2.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:design:0.2.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:appcompat:0.2.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:cardview:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:support:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:design:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:appcompat:0.3.0@aar'
 }
 ```
 
@@ -42,8 +42,7 @@ dependencies {
 Use the functions from each library (these are found in `graknol.anvil.kotlin`) to create views and then use the functions on `this`, for instance:
 
 ```kotlin
-// LinearLayout.LayoutParams is the only way layoutParams() can work. (It needs to know the parent's LayoutParams type)
-val fooContent: SupportDSLDrawerLayout<LinearLayout.LayoutParams>.() -> Unit = {
+val fooContent: Anvil.Renderable.() -> Unit = {
   coordinatorLayout {
     appBarLayout {
       size(MATCH, WRAP)
@@ -55,7 +54,7 @@ val fooContent: SupportDSLDrawerLayout<LinearLayout.LayoutParams>.() -> Unit = {
 }
 
 // Just to demonstrate that you can indeed style views by a lambda (think, theme classes with functions like this in it).
-val styleNavDrawer: AppCompatDSLListViewCompat<DrawerLayout.LayoutParams>.() -> Unit = {
+val styleNavDrawer: AppCompatDSLListViewCompat.() -> Unit = {
   choiceMode(ListView.CHOICE_MODE_SINGLE)
   divider(resources.getDrawable(android.R.color.transparent))
   dividerHeight(0)
@@ -64,30 +63,30 @@ val styleNavDrawer: AppCompatDSLListViewCompat<DrawerLayout.LayoutParams>.() -> 
 
 class ExampleView(c: Context) : RenderableView(c) {
   fun view() {
-    // This is important!
-    root {
-      linearLayout {
-        backgroundColor(someIntColorValue)
+    linearLayout {
+      backgroundColor(someIntColorValue)
+      
+      appCompatButton {
+        text("click me!")
         
-        appCompatButton {
-          text("click me!")
-          
-          onClick(View.OnClickListener {
-            doSomethingCool()
-          })
-        }
+        onClick(View.OnClickListener {
+          doSomethingCool()
+        })
+      }
+      
+      drawerLayout {
+        fooContent() // Look at the top of this snippet
         
-        drawerLayout {
-          fooContent() // Look at the top of this snippet
+        listViewCompat {
+          size(dip(240), MATCH)
           
-          listViewCompat {
-            size(dip(240), MATCH)
-            layoutParams {
-              gravity = START
-            }
-            
-            styleNavDrawer() // Look at the top of this snippet
+          // Without `this@drawerLayout`, Kotlin thinks we're calling `listViewCompat.layoutParams`, we're working on a fix.
+          // **NOTE:** On non-ViewGroup classes (e.g. buttons) it works as expected (without having to type this@...).
+          this@drawerLayout.layoutParams {
+            gravity = START
           }
+          
+          styleNavDrawer() // Look at the top of this snippet
         }
       }
     }
@@ -99,10 +98,10 @@ The reason for the "seemingly redundant" typing of `OnClickListener` above, is s
 
 **NOTE:** _You may or may not need to write View.OnClickListener instead of just OnClickListener. I don't know if it's a bug with Kotlin or with Android Studio, but nonetheless nice to know about._
 
-### Splitting the code is ugly, I know
+### Splitting the code is ~~ugly *still a bit ugly*, I know
 
-We're working hard on solving this problem and will probably have to restructure big parts of Anvil and AnvilKotlin, but in the meantime, this is how it works. Yes, it's ugly! But, it was the only way it could be done with the current architecture :(
+We're working hard on solving this problem and will probably have to restructure big parts of Anvil and AnvilKotlin, but in the meantime, this is how it works.
 
 ## License
 
-Code is distributed under MIT license, feel free to use it in your proprietary projects as well. 
+Code is distributed under the MIT license, feel free to use it in your proprietary projects as well. 

@@ -58,7 +58,7 @@ inline fun Anvil.Renderable.appCompatImageView(crossinline r: AppCompatDSLAppCom
 inline fun Anvil.Renderable.activityChooserView(crossinline r: AppCompatDSLActivityChooserView.() -> Unit) = AppCompatv7DSL.activityChooserView({ AppCompatDSLActivityChooserView.r() })
 inline fun Anvil.Renderable.appCompatCheckedTextView(crossinline r: AppCompatDSLAppCompatCheckedTextView.() -> Unit) = AppCompatv7DSL.appCompatCheckedTextView({ AppCompatDSLAppCompatCheckedTextView.r() })
 
-object AppCompatDSLAppCompatImageView : graknol.anvil.kotlin.appcompat.AppCompatDSLAppCompatRatingBarBase()
+object AppCompatDSLAppCompatImageView : AppCompatDSLAppCompatImageViewBase()
 object AppCompatDSLAppCompatImageButton : AppCompatDSLAppCompatImageButtonBase()
 object AppCompatDSLAppCompatRatingBar : AppCompatDSLAppCompatRatingBarBase()
 object AppCompatDSLAppCompatSeekBar : AppCompatDSLAppCompatSeekBarBase()

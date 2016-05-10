@@ -23,17 +23,17 @@ dependencies {
   // Remember, you still need to set up the equivalent Anvil ones!
   
   // SDK libraries
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk15Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk19Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.0:sdk21Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk15Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk19Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk21Release@aar'
   
   // Support libraries
-  compile 'com.github.graknol.AnvilKotlin:cardview:0.3.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.3.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.3.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:support:0.3.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:design:0.3.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:appcompat:0.3.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:cardview:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:support:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:design:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:appcompat:0.3.1@aar'
 }
 ```
 

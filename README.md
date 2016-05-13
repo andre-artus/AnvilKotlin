@@ -89,6 +89,14 @@ class ExampleView(c: Context) : RenderableView(c) {
           styleNavDrawer() // Look at the top of this snippet
         }
       }
+      
+      // If there are functions missing in the DSL, do this little trick:
+      with(Anvil.currentView<LinearLayout>()) {
+      	// Magic!
+      	this.whicheverFunctionIsMissing()
+      	this.andAllOthers()
+      	youDontHaveToSpecify_this_()
+      }
     }
   }
 }

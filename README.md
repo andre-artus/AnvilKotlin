@@ -19,82 +19,78 @@ allprojects {
 The possible library strings are:
 ```gradle
 dependencies {
-  // Remember, you still need to set up the equivalent Anvil ones!
-  
-  // SDK libraries
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk15Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk19Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk21Release@aar'
-  
-  // Support libraries
-  compile 'com.github.graknol.AnvilKotlin:cardview:0.4.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.4.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.4.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:support:0.4.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:design:0.4.0@aar'
-  compile 'com.github.graknol.AnvilKotlin:appcompat:0.4.0@aar'
+	// Remember, you still need to set up the equivalent Anvil ones!
+	
+	// SDK libraries
+	compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk15Release@aar'
+	compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk19Release@aar'
+	compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk21Release@aar'
+	
+	// Support libraries
+	compile 'com.github.graknol.AnvilKotlin:cardview:0.4.0@aar'
+	compile 'com.github.graknol.AnvilKotlin:gridlayout:0.4.0@aar'
+	compile 'com.github.graknol.AnvilKotlin:recyclerview:0.4.0@aar'
+	compile 'com.github.graknol.AnvilKotlin:support:0.4.0@aar'
+	compile 'com.github.graknol.AnvilKotlin:design:0.4.0@aar'
+	compile 'com.github.graknol.AnvilKotlin:appcompat:0.4.0@aar'
 }
 ```
 
 ## How to use it
 Use the functions from each library (these are found in `graknol.anvil.kotlin`) to create views and then use the functions on `this`, for instance:
-
 ```kotlin
 val fooContent: Anvil.Renderable.() -> Unit = {
-  coordinatorLayout {
-    appBarLayout {
-      size(MATCH, WRAP)
-      toolbar {
-        size(MATCH, dip(48))
-      }
-    }
-  }
+	coordinatorLayout {
+		appBarLayout {
+			size(MATCH, WRAP)
+			toolbar {
+				size(MATCH, dip(48))
+			}
+		}
+	}
 }
 
 // Just to demonstrate that you can indeed style views by a lambda (think, theme classes with functions like this in it).
 val styleNavDrawer: AppCompatDSLListViewCompat.() -> Unit = {
-  choiceMode(ListView.CHOICE_MODE_SINGLE)
-  divider(resources.getDrawable(android.R.color.transparent))
-  dividerHeight(0)
-  backgroundColor(hex("#111111"))
+	choiceMode(ListView.CHOICE_MODE_SINGLE)
+	divider(resources.getDrawable(android.R.color.transparent))
+	dividerHeight(0)
+	backgroundColor(hex("#111111"))
 }
 
 class ExampleView(c: Context) : RenderableView(c) {
-  fun view() {
-    linearLayout {
-      backgroundColor(someIntColorValue)
-      
-      appCompatButton {
-        text("click me!")
-        
-        onClick(View.OnClickListener {
-          doSomethingCool()
-        })
-      }
-      
-      drawerLayout {
-      	// Look at the top of this snippet
-        fooContent()
-        
-        listViewCompat {
-          size(dip(240), MATCH)
-          
-          // Look at the top of this snippet
-          styleNavDrawer() 
-        }.lparams {
-        	gravity = START
-        }
-      }
-      
-      // If there are functions missing in the DSL, do this little trick:
-      with(Anvil.currentView<LinearLayout>()) {
-      	// Magic!
-      	this.whicheverFunctionIsMissing()
-      	this.andAllOthers()
-      	youDontHaveToSpecify_this_()
-      }
-    }
-  }
+	fun view() {
+		linearLayout {
+			backgroundColor(someIntColorValue)
+			appCompatButton {
+				text("click me!")
+				onClick(View.OnClickListener {
+					doSomethingCool()
+				})
+			}
+			
+			drawerLayout {
+				// Look at the top of this snippet
+				fooContent()
+				
+				listViewCompat {
+					size(dip(240), MATCH)
+					// Look at the top of this snippet
+					styleNavDrawer() 
+				}.lparams {
+					gravity = START
+					weight = 1f
+				}
+			}
+			
+			// If there are functions missing in the DSL, do this little trick:
+			with(Anvil.currentView<LinearLayout>()) {
+				// Magic!
+				whicheverFunctionIsMissing()
+				andAllOthers()
+			}
+		}
+	}
 }
 ```
 

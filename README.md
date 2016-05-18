@@ -82,7 +82,7 @@ class ExampleView(c: Context) : RenderableView(c) {
           // Look at the top of this snippet
           styleNavDrawer() 
         }.lparams {
-  				gravity = START
+        	gravity = START
         }
       }
       

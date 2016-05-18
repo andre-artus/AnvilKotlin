@@ -5,6 +5,8 @@ package graknol.anvil.kotlin
 import android.animation.Animator
 import android.content.res.Resources
 import android.text.TextWatcher
+import android.view.View
+import android.view.ViewGroup
 import trikita.anvil.Anvil
 import trikita.anvil.BaseDSL
 
@@ -87,4 +89,21 @@ open class BaseDSL() {
 	open fun typeface(font: String, style: Int) = BaseDSL.typeface(font, style)
 	open fun visibility(visible: Boolean) = BaseDSL.visibility(visible)
 	open fun weight(w: Float) = BaseDSL.weight(w)
+}
+
+class DSLResultStub internal constructor(internal val view: View) {
+
+	internal val lparams: ViewGroup.LayoutParams
+		get() = view.layoutParams
+
+	companion object {
+		fun fromCurrentView() = DSLResultStub(Anvil.currentView<View>())
+	}
+
+	fun <T : ViewGroup.LayoutParams> layoutParams(arg: T.() -> Unit): DSLResultStub {
+		@Suppress("UNCHECKED_CAST")
+		(lparams as T).arg()
+		view.layoutParams = lparams
+		return this
+	}
 }

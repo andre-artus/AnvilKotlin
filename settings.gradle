@@ -1,1 +1,1 @@
-include ':anvil', ':appcompat', ':support', ':cardview', ':recyclerview', ':gridlayout', ':design'
+include ':anvil', ':appcompat', ':support', ':cardview', ':recyclerview', ':gridlayout', ':design', ':example'

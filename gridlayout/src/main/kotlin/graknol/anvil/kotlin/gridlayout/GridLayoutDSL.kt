@@ -4,20 +4,39 @@ package graknol.anvil.kotlin.gridlayout
 
 import android.support.v7.widget.GridLayout
 import android.util.Printer
+import graknol.anvil.kotlin.DSLResultStub
 import graknol.anvil.kotlin.DSLSpaceBase
 import graknol.anvil.kotlin.DSLViewGroupBase
 import trikita.anvil.Anvil
 import trikita.anvil.gridlayout.v7.GridLayoutv7DSL
 
-inline fun Anvil.Renderable.gridLayout(crossinline r: GridLayoutDSLGridLayout.() -> Unit) = GridLayoutv7DSL.gridLayout({ GridLayoutDSLGridLayout.r() })
-inline fun Anvil.Renderable.space(crossinline r: GridLayoutDSLSpace.() -> Unit) = GridLayoutv7DSL.space({ GridLayoutDSLSpace.r() })
+inline fun Anvil.Renderable.gridLayout(crossinline r: GridLayoutDSLGridLayout.() -> Unit): DSLResultStub {
+	var result: DSLResultStub? = null
+	GridLayoutv7DSL.gridLayout {
+		GridLayoutDSLGridLayout.r()
+		result = DSLResultStub.fromCurrentView()
+	}
+	return result!!
+}
+
+inline fun Anvil.Renderable.space(crossinline r: GridLayoutDSLSpace.() -> Unit): DSLResultStub {
+	var result: DSLResultStub? = null
+	GridLayoutv7DSL.space {
+		GridLayoutDSLSpace.r()
+		result = DSLResultStub.fromCurrentView()
+	}
+	return result!!
+}
 
 object GridLayoutDSLSpace : GridLayoutDSLSpaceBase()
-object GridLayoutDSLGridLayout : GridLayoutDSLGridLayoutBase<GridLayout.LayoutParams>()
+object GridLayoutDSLGridLayout : GridLayoutDSLGridLayoutBase() {
+	fun DSLResultStub.lparams(arg: GridLayout.LayoutParams.() -> Unit) = layoutParams(arg)
+}
 
 abstract class GridLayoutDSLSpaceBase : DSLSpaceBase() {
 }
-abstract class GridLayoutDSLGridLayoutBase<T : GridLayout.LayoutParams> : DSLViewGroupBase<T>() {
+
+abstract class GridLayoutDSLGridLayoutBase : DSLViewGroupBase() {
 	open fun alignmentMode(arg: Int) = GridLayoutv7DSL.alignmentMode(arg)
 	open fun columnCount(arg: Int) = GridLayoutv7DSL.columnCount(arg)
 	open fun columnOrderPreserved(arg: Boolean) = GridLayoutv7DSL.columnOrderPreserved(arg)

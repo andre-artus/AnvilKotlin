@@ -6,7 +6,6 @@ A simple Kotlin wrapper around [Anvil](https://github.com/zserge/anvil).
 The only purpose of this library is to provide type safety to Anvil through Kotlin. Nothing more, nothing less. Enjoy! :) 
 
 ## Get it
-
 Add the JitPack repo to your root build.gradle file:
 ```gradle
 allprojects {
@@ -23,22 +22,21 @@ dependencies {
   // Remember, you still need to set up the equivalent Anvil ones!
   
   // SDK libraries
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk15Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk19Release@aar'
-  compile 'com.github.graknol.AnvilKotlin:anvil:0.3.1:sdk21Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk15Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk19Release@aar'
+  compile 'com.github.graknol.AnvilKotlin:anvil:0.4.0:sdk21Release@aar'
   
   // Support libraries
-  compile 'com.github.graknol.AnvilKotlin:cardview:0.3.1@aar'
-  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.3.1@aar'
-  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.3.1@aar'
-  compile 'com.github.graknol.AnvilKotlin:support:0.3.1@aar'
-  compile 'com.github.graknol.AnvilKotlin:design:0.3.1@aar'
-  compile 'com.github.graknol.AnvilKotlin:appcompat:0.3.1@aar'
+  compile 'com.github.graknol.AnvilKotlin:cardview:0.4.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:gridlayout:0.4.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:recyclerview:0.4.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:support:0.4.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:design:0.4.0@aar'
+  compile 'com.github.graknol.AnvilKotlin:appcompat:0.4.0@aar'
 }
 ```
 
 ## How to use it
-
 Use the functions from each library (these are found in `graknol.anvil.kotlin`) to create views and then use the functions on `this`, for instance:
 
 ```kotlin
@@ -75,18 +73,16 @@ class ExampleView(c: Context) : RenderableView(c) {
       }
       
       drawerLayout {
-        fooContent() // Look at the top of this snippet
+      	// Look at the top of this snippet
+        fooContent()
         
         listViewCompat {
           size(dip(240), MATCH)
           
-          // Without `this@drawerLayout`, Kotlin thinks we're calling `listViewCompat.layoutParams`, we're working on a fix.
-          // **NOTE:** On non-ViewGroup classes (e.g. buttons) it works as expected (without having to type this@...).
-          this@drawerLayout.layoutParams {
-            gravity = START
-          }
-          
-          styleNavDrawer() // Look at the top of this snippet
+          // Look at the top of this snippet
+          styleNavDrawer() 
+        }.lparams {
+  				gravity = START
         }
       }
       
@@ -102,14 +98,10 @@ class ExampleView(c: Context) : RenderableView(c) {
 }
 ```
 
-The reason for the "seemingly redundant" typing of `OnClickListener` above, is simply that Kotlin does not automatically convert Kotlin parameters to SAM functions, and there are too many functions in the different library for me to patch every single one of them. Also, some listeners have multiple functions, so you'll end up writing those this way anyways. ;)
+The reason for the "seemingly redundant" typing of `OnClickListener` above, is simply that Kotlin does not automatically convert Kotlin parameters to SAMs (Single abstract method), and there are too many functions in the different library for me to patch every single one of them. **PS: Some listeners have multiple functions, so you'll end up writing those like this anyway ;)**
 
-**NOTE:** _You may or may not need to write View.OnClickListener instead of just OnClickListener. I don't know if it's a bug with Kotlin or with Android Studio, but nonetheless nice to know about._
-
-### Splitting the code is ~~ugly *still a bit ugly*, I know
-
-We're working hard on solving this problem and will probably have to restructure big parts of Anvil and AnvilKotlin, but in the meantime, this is how it works.
+### Splitting the code is ~~ugly *not that ugly anymore, YAY :)*
+Most issues are not present anymore. If there's something bothering you on this area, DO NOT hesitate to open an issue (we really need all the input we can get).
 
 ## License
-
 Code is distributed under the MIT license, feel free to use it in your proprietary projects as well. 
